@@ -12,13 +12,11 @@ import java.util.List;
 import com.skilldistillery.film.entities.Actor;
 import com.skilldistillery.film.entities.Film;
 
-
 public class FilmDaoJbcImpl implements FilmDAO {
 
 	private static final String URL = "jdbc:mysql://localhost:3306/sdvid?useSSL=false&useLegacyDatetimeCode=false&serverTimezone=US/Mountain";
 	private static String user = "student";
 	private static String pass = "student";
-
 
 	static {
 		try {
@@ -368,7 +366,7 @@ public class FilmDaoJbcImpl implements FilmDAO {
 		film.setFilmId(insertedFilmId);
 		return film;
 	}
-	
+
 	public boolean deleteFilm(Film film) {
 		Connection conn = null;
 		try {
@@ -396,6 +394,5 @@ public class FilmDaoJbcImpl implements FilmDAO {
 		}
 		return true;
 	}
-	
-	
+
 }

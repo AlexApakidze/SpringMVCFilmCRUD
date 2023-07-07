@@ -28,7 +28,7 @@ public class FilmController {
 		ModelAndView mv = new ModelAndView("WEB-INF/home.jsp");
 		System.out.println("+++++++++++++ FilmId: " + filmId);
 		Film film = filmDao.findFilmById(filmId);
-		System.out.println("+++++++++++++ FilmId: " + filmId);
+		System.out.println("+++++++++++++ Film: " + film);
 		
 		mv.addObject("film", film);
 		return mv;
