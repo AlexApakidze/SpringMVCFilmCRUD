@@ -16,7 +16,7 @@ public class FilmController {
 	@Autowired
 	private FilmDAO filmDao;
 
-	@RequestMapping(path = {"/", "home.do"})
+	@RequestMapping(path = { "/", "home.do" })
 
 	public ModelAndView goHome() {
 		ModelAndView mv = new ModelAndView("WEB-INF/home.jsp");
@@ -29,10 +29,14 @@ public class FilmController {
 		System.out.println("+++++++++++++ FilmId: " + filmId);
 		Film film = filmDao.findFilmById(filmId);
 		System.out.println("+++++++++++++ Film: " + film);
-		
+
 		mv.addObject("film", film);
 		return mv;
-		
+
 	}
+
 	/// STUFF ADDED BY NON-REPO OWNER
+
+	// some comment here
+
 }
