@@ -6,6 +6,7 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
 
@@ -71,6 +72,7 @@ public class FilmController {
 		return mv;
 	}
 
+<<<<<<< HEAD
 	@RequestMapping(path = "deleteFilm.do")
 	public ModelAndView deleteFilm(@RequestParam(name = "filmId") int filmId) throws SQLException {
 		ModelAndView mv = new ModelAndView("film.jsp");
@@ -91,4 +93,8 @@ public class FilmController {
 		return mv;
 	}
 
+=======
+	
+	
+>>>>>>> 1b71aa6af8878598463ec7dbc0d6972382f259cd
 }
