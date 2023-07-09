@@ -38,10 +38,14 @@ public class FilmController {
 	}
 	
 	@RequestMapping(path = "showFilmsBySearchTerm.do")
-	public ModelAndView showFilm(String searchTerm) throws SQLException {
+	public ModelAndView showFilm(@RequestParam(name="keyword") String searchTerm) throws SQLException {
 		ModelAndView mv = new ModelAndView("WEB-INF/home.jsp");
-		List<Film> film = filmDao.findFilmsByKeyword(searchTerm) ;
-		mv.addObject("film", film);
+		List<Film> films = filmDao.findFilmsByKeyword(searchTerm) ;
+		
+		for (Film film : films) {
+			
+			mv.addObject("film", film);
+		}
 		return mv;
 
 	}

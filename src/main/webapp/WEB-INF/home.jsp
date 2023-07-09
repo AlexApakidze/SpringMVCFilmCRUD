@@ -16,7 +16,6 @@
 	</form>
 	
 	<form action="showFilmsBySearchTerm.do" method="POST">
-
 		<input type="text" name="keyword" placeholder="Get film by keyword"> <br>
 		<button>Get Film</button>
 	</form>
