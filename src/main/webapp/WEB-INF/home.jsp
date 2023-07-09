@@ -9,9 +9,15 @@
 </head>
 <body>
 	<h1>Full Stack Films Inc.</h1>
-	<form action="showFilm.do" method="POST">
+	<form action="showFilmById.do" method="POST">
 
 		<input type="number" name="filmId" placeholder="Get film by ID"> <br>
+		<button>Get Film</button>
+	</form>
+	
+	<form action="showFilmsBySearchTerm.do" method="POST">
+
+		<input type="text" name="keyword" placeholder="Get film by keyword"> <br>
 		<button>Get Film</button>
 	</form>
 	
@@ -21,15 +27,9 @@
 		<input type="text" name="description" placeholder="Film Description"> <br>
 		<input type="number" name="releaseYear" placeholder="Release Year"><br>
 		<h3>Languages:</h3>
-		<input type="number" name="languageId" min="1" max="6" ><br>
-		<h3>1: English</h3>
-		<h3>2: Italian</h3>
-		<h3>3: Japanese</h3>
-		<h3>4: Mandarin</h3>
-		<h3>5: French</h3>
-		<h3>6: German</h3>
+		<input type="number" name="languageId" min="1" max="6" >
+		<h4>1: English<br>2: Italian<br>3: Japanese <br>4: Mandarin<br>5: French<br>6: German</h4>
 		<input type="number" name="length" placeholder="Length of movie(In minutes)"><br>
-		<input type="rating" name="" placeholder=""><br>
 		<button>Add film</button>
 
 	</form>
@@ -46,7 +46,7 @@
 			<h3>Replacement cost: ${film.replacementCost}</h3>
 			<h3>Film rating: ${film.rating}</h3>
 			<h3>Special features: ${film.specialFeatures}</h3>
-			<h3>Actors: ${film.actors}</h3>
+			<h3>Actors: ${film.getActorsFullName()}</h3>
 			
 		</c:when>
 		<c:otherwise>

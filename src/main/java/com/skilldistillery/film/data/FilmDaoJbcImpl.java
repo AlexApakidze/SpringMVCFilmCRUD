@@ -8,7 +8,6 @@ import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.List;
-
 import com.skilldistillery.film.entities.Actor;
 import com.skilldistillery.film.entities.Film;
 
@@ -161,7 +160,7 @@ public class FilmDaoJbcImpl implements FilmDAO {
 	}
 
 	@Override
-	public List<Film> findFilmByKeyword(String searchTerm) {
+	public List<Film> findFilmsByKeyword(String searchTerm) {
 		List<Film> films = new ArrayList<>();
 		try {
 			Connection conn = DriverManager.getConnection(URL, user, pass);

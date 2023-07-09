@@ -141,6 +141,14 @@ public class Film {
 		this.specialFeatures = specialFeatures;
 	}
 
+	public String getActorsFullName() {
+		String actorsInMovie ="";
+		for (Actor actor : actors) {
+			actorsInMovie = actorsInMovie+ actor.getFirstName()+" "+actor.getLastName()+", ";
+		}
+		actorsInMovie = actorsInMovie.substring(0, (actorsInMovie.length()-2))+".";
+		return actorsInMovie;
+	}
 	public List<Actor> getActors() {
 		return actors;
 	}
