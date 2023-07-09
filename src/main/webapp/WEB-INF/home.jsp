@@ -11,12 +11,12 @@
 	<h1>Full Stack Films Inc.</h1>
 	<form action="showFilm.do" method="POST">
 
-		<input type="number" name="filmId"> <br>
+		<input type="number" name="filmId"placeholder="Get film by ID"> <br>
 		<button>Get Film</button>
 	</form>
 	<c:choose>
 		<c:when test="${not empty film }">
-			<h2>${film.actors}</h2>
+			<h2>${film.title}</h2>
 		</c:when>
 		<c:otherwise>
 		</c:otherwise>
@@ -25,8 +25,8 @@
 	<form action="addFilm.do" method="POST">
 
 		<!-- <input type="number" name="filmId"> <br> -->
-		<input type="text" name="title"> <br>
-		<input type="text" name="description"> <br>
+		<input type="text" name="title" placeholder="Title of film"> <br>
+		<input type="text" name="description" placeholder="Film Description"> <br>
 		<!-- <input type="number" name="releaseYear"> <br>
 		<input type="number" name="languageId"> <br>
 		<input type="number" name="rentalDuration"> <br>
@@ -40,7 +40,12 @@
 	</form>
 	<c:choose>
 		<c:when test="${not empty film }">
-			<h2>${film.actors}</h2>
+			<h2>${film.title}</h2>
+			<h3>Film description: ${film.description}</h3>
+			<h3>Release year: ${film.releaseYear}</h3>
+			<h3>LanguageId: ${film.languageId}</h3>
+			<h3>Language: ${film.getLanguage()}</h3>
+		
 		</c:when>
 		<c:otherwise>
 		</c:otherwise>

@@ -328,11 +328,12 @@ public class FilmDaoJbcImpl implements FilmDAO {
 		try {
 			conn = DriverManager.getConnection(URL, user, pass);
 			conn.setAutoCommit(false); // START TRANSACTION
-			String sql = "INSERT INTO Film (id, title, language_id) VALUES (?,?,?)";
+			String sql = "INSERT INTO Film (id, title, language_id, description) VALUES (?,?,?,?)";
 			PreparedStatement stmt = conn.prepareStatement(sql, Statement.RETURN_GENERATED_KEYS);
 			stmt.setInt(1, insertedFilmId);
 			stmt.setString(2, film.getTitle());
-			stmt.setInt(3, film.getLanguageId());
+			stmt.setInt(3, 1);
+			stmt.setString(4, film.getDescription());
 			int updateCount = stmt.executeUpdate();
 
 			if (updateCount == 1) {
