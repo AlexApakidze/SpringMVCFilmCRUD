@@ -160,7 +160,7 @@ public class FilmDaoJbcImpl implements FilmDAO {
 	}
 
 	@Override
-	public List<Film> findFilmByKeyword(String searchTerm) {
+	public List<Film> findFilmsByKeyword(String searchTerm) {
 		List<Film> films = new ArrayList<>();
 		try {
 			Connection conn = DriverManager.getConnection(URL, user, pass);
@@ -430,9 +430,5 @@ public class FilmDaoJbcImpl implements FilmDAO {
 		return film;
 	}
 
-	@Override
-	public List<Film> findFilmsByKeyword(String searchTerm) {
-		// TODO Auto-generated method stub
-		return null;
-	}
+
 }
