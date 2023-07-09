@@ -41,8 +41,8 @@ public class FilmController {
 	@RequestMapping(path = "addFilm.do")
 	public ModelAndView addFilm(@RequestParam(name = "title") String title,
 			@RequestParam(name = "description") String desc) throws SQLException {
-		ModelAndView mv = new ModelAndView("WEB-INF/addFilmSuccess.jsp");
 
+		ModelAndView mv = new ModelAndView("WEB-INF/addFilmSuccess.jsp");
 		Film film = new Film();
 		film.setTitle(title);
 		film.setDescription(desc);

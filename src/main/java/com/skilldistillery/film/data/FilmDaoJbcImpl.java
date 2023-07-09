@@ -243,7 +243,6 @@ public class FilmDaoJbcImpl implements FilmDAO {
 		try {
 			conn.close();
 		} catch (SQLException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 		return actor;
