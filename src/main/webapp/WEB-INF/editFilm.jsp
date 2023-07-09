@@ -7,10 +7,11 @@
 </head>
 <body>
     <h1>Edit Film</h1>
-    <form action="updateFilm.do" method="POST">
+    <form action="editFilm.do" method="POST">
         <input type="hidden" name="filmId" value="${film.filmId}">
         
         <h2>Current Values:</h2>
+        <p><strong>ID</strong> ${film.id}</p>
         <p><strong>Title:</strong> ${film.title}</p>
         <p><strong>Description:</strong> ${film.description}</p>
         <p><strong>Release Year:</strong> ${film.releaseYear}</p>
@@ -22,6 +23,8 @@
         <p><strong>Rating:</strong> ${film.rating}</p>
         
         <h2>Update Film:</h2>
+        
+        <input type="number" name="filmId" value=" ${film.id}">  
 		<label for="title">Title:</label>
 		<input type="text" name="title" value="${film.title}" placeholder="Edit Title"><br>
 		<label for="description">Description:</label>

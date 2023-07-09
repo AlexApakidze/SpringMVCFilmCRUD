@@ -72,29 +72,22 @@ public class FilmController {
 		return mv;
 	}
 
-<<<<<<< HEAD
-	@RequestMapping(path = "deleteFilm.do")
-	public ModelAndView deleteFilm(@RequestParam(name = "filmId") int filmId) throws SQLException {
-		ModelAndView mv = new ModelAndView("film.jsp");
-		filmDao.deleteFilm(filmDao.findFilmById(filmId));
-		return mv;
-	}
-
 	@RequestMapping(path = "editFilm.do")
-	public ModelAndView editFilm(@RequestParam(name = "filmId") int filmId, @RequestParam(name = "title") String title,
-			@RequestParam(name = "description") String description, @RequestParam(name = "releaseYear") int releaseYear,
+	public ModelAndView editFilm(@RequestParam(name = "filmId") int filmId, 
+			@RequestParam(name = "title") String title,
+			@RequestParam(name = "description") String description,
+			@RequestParam(name = "releaseYear") int releaseYear,
 			@RequestParam(name = "languageId") int languageId,
 			@RequestParam(name = "rentalDuration") int rentalDuration,
-			@RequestParam(name = "rentalRate") int rentalRate, @RequestParam(name = "length") int length,
-			@RequestParam(name = "replacementCost") int replacementCost, @RequestParam(name = "rating") String Rating,
+			@RequestParam(name = "rentalRate") int rentalRate, 
+			@RequestParam(name = "length") int length,
+			@RequestParam(name = "replacementCost") int replacementCost, 
+			@RequestParam(name = "rating") String Rating,
 			@RequestParam(name = "specialFeatures") String specialFeatures) throws SQLException {
 		ModelAndView mv = new ModelAndView("film.jsp");
-		filmDao.deleteFilm(filmDao.findFilmById(filmId));
+		Film editedFilm = filmDao.findFilmById(filmId);
 		return mv;
 	}
 
-=======
-	
-	
->>>>>>> 1b71aa6af8878598463ec7dbc0d6972382f259cd
+
 }
