@@ -20,6 +20,10 @@
 	<h3>Special features: ${film.specialFeatures}</h3>
 	<h3>Actors: ${film.actors}</h3>
 
+
+
+
+
 	<form action="deleteFilm.do" method="POST">
 		<input type="hidden" name="filmId" value="${film.filmId}">
 		<button>Delete Film</button>
