@@ -7,6 +7,7 @@
 <title>Film Details</title>
 </head>
 <body>
+     <c:forEach name="films" items="${film}">
 	<h1>Film Details</h1>
 	<h2>${film.title}</h2>
 	<h3>Film description: ${film.description}</h3>
@@ -19,7 +20,8 @@
 	<h3>Film rating: ${film.rating}</h3>
 	<h3>Special features: ${film.specialFeatures}</h3>
 	<h3>Actors: ${film.actors}</h3>
-
+	 </c:forEach>
+	
 	<form action="deleteFilm.do" method="POST">
 		<input type="hidden" name="filmId" value="${film.filmId}">
 		<button>Delete Film</button>
