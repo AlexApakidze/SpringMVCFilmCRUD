@@ -8,15 +8,15 @@ import com.skilldistillery.film.entities.Film;
 
 
 public interface FilmDAO {
-	public Film findFilmById(int filmId) throws SQLException;
+	public Film findFilmById(int filmId);
 
-	public Actor findActorById(int actorId) throws SQLException;
+	public Actor findActorById(int actorId);
 
 	public List<Actor> findActorsByFilmId(int filmId);
 
 	public List<Film> findFilmsByActorId(int actorId);
 
-	public List<Film> findFilmByKeyword(String searchTerm) throws SQLException;
+	public List<Film> findFilmByKeyword(String searchTerm);
 
 	public Actor createActor(Actor actor);
 	
@@ -25,6 +25,8 @@ public interface FilmDAO {
 	public Film createFilm(Film film);
 	
 	public boolean deleteFilm(Film film);
+	
+	public Film updateFilm(Film film);
 	
 	
 	

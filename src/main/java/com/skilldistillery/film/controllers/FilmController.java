@@ -6,6 +6,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
 
 import com.skilldistillery.film.data.FilmDAO;
@@ -35,13 +37,24 @@ public class FilmController {
 		return mv;
 
 	}
-	
 
+	@RequestMapping(path = "addFilm.do")
+	public ModelAndView addFilm(@RequestParam(name = "title") String title,
+			@RequestParam(name = "description") String desc) throws SQLException {
+		ModelAndView mv = new ModelAndView("WEB-INF/home.jsp");
 
+		Film film = new Film();
+		film.setTitle(title);
+		film.setDescription(desc);
+		try {
+			filmDao.createFilm(film);
+		} catch (Exception e) {
+			System.err.println("*************** Failed to add film");
+		}
 
+		mv.addObject("film", film);
+		return mv;
 
-	/// STUFF ADDED BY NON-REPO OWNER
-
-	// some comment here
-
+		// some comment here
+	}
 }
