@@ -9,6 +9,7 @@
 </head>
 <body>
 
+<<<<<<< HEAD
      <c:forEach var="film" items="${film}">
 	<h1>Film Details</h1>
 	<h2>${film.title}</h2> 
@@ -25,6 +26,9 @@
 	 </c:forEach>
 	
 <%-- 	<form action="deleteFilm.do" method="POST">
+=======
+	<form action="deleteFilm.do" method="POST">
+>>>>>>> 3afd91c13869940a480b16b767fbfc580efcbb13
 		<input type="hidden" name="filmId" value="${film.filmId}">
 		<button>Delete Film</button>
 	</form>
