@@ -5,8 +5,6 @@ import java.sql.SQLException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
-
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
 
@@ -20,7 +18,6 @@ public class FilmController {
 	private FilmDAO filmDao;
 
 	@RequestMapping(path = { "/", "home.do" })
-
 	public ModelAndView goHome() {
 		ModelAndView mv = new ModelAndView("WEB-INF/home.jsp");
 		return mv;
@@ -35,7 +32,6 @@ public class FilmController {
 
 		mv.addObject("film", film);
 		return mv;
-
 	}
 
 	@RequestMapping(path = "addFilm.do")
@@ -53,7 +49,16 @@ public class FilmController {
 		}
 		mv.addObject("film", film);
 		return mv;
-
-		// some comment here
 	}
+
+	@RequestMapping(path = "displayFilm.do")
+	public ModelAndView displayFilm(@RequestParam(name = "filmId") int filmId) throws SQLException {
+		ModelAndView mv = new ModelAndView("film.jsp");
+		Film film = filmDao.findFilmById(filmId);
+		mv.addObject("film", film);
+		return mv;
+	}
+
+
+
 }

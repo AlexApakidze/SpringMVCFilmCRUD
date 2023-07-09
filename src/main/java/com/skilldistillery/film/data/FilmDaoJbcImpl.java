@@ -8,7 +8,6 @@ import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.List;
-
 import com.skilldistillery.film.entities.Actor;
 import com.skilldistillery.film.entities.Film;
 
@@ -429,5 +428,11 @@ public class FilmDaoJbcImpl implements FilmDAO {
 			e.printStackTrace();
 		}
 		return film;
+	}
+
+	@Override
+	public List<Film> findFilmsByKeyword(String searchTerm) {
+		// TODO Auto-generated method stub
+		return null;
 	}
 }
