@@ -80,6 +80,11 @@ public class Film {
 		this.releaseYear = releaseYear;
 	}
 
+	public String getLanguage() {
+		String[] language = { "Javanese", "English", "Italian ", " Japanese", " Mandarin", " French ", " German" };
+
+		return language[languageId];
+	}
 	public int getLanguageId() {
 		return languageId;
 	}

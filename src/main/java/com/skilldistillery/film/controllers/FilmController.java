@@ -51,7 +51,6 @@ public class FilmController {
 		} catch (Exception e) {
 			System.err.println("*************** Failed to add film");
 		}
-
 		mv.addObject("film", film);
 		return mv;
 
