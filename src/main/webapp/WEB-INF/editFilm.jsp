@@ -11,7 +11,7 @@
         <input type="hidden" name="filmId" value="${film.filmId}">
         
         <h2>Current Values:</h2>
-        <p><strong>ID</strong> ${film.id}</p>
+        <p><strong>ID</strong> ${film.filmId}</p>
         <p><strong>Title:</strong> ${film.title}</p>
         <p><strong>Description:</strong> ${film.description}</p>
         <p><strong>Release Year:</strong> ${film.releaseYear}</p>
@@ -24,9 +24,10 @@
         
         <h2>Update Film:</h2>
         
-        <input type="number" name="filmId" value=" ${film.id}">  
-		<label for="title">Title:</label>
+        <input type="hidden" name="filmId" value=" ${film.id}">  
+		
 		<input type="text" name="title" value="${film.title}" placeholder="Edit Title"><br>
+		<label for="title">Title:</label>
 		<label for="description">Description:</label>
 		<input type="text" name="description" value="${film.description}" placeholder="Edit Description"><br>
 		<label for="releaseYear">Release Year:</label>
@@ -43,6 +44,8 @@
 		<input type="text" name="replacementCost" value="${film.replacementCost}" placeholder="Edit Replacement Cost"><br>
 		<label for="rating">Rating:</label>
 		<input type="text" name="rating" value="${film.rating}" placeholder="Edit Rating"><br>
+		<label for="specialFeatures">Special Features:</label>
+		<input type="text" name="specialFeatures" value="${film.specialFeatures}" placeholder="Edit special features"><br>
 
         
         <input type="submit" value="Update">
