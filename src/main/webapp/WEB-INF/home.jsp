@@ -24,24 +24,34 @@
 	<button type="submit">Create a Film</button>
 	</form>
 
-	<c:choose>
-		<c:when test="${not empty film }">
-		
-			<h2>${film.title}</h2>
-			<h3>Film description: ${film.description}</h3>
-			<h3>Release year: ${film.releaseYear}</h3>
-			<h3>Language: ${film.getLanguage()}</h3>
-			<h3>Rental Duration: ${film.rentalDuration}</h3>
-			<h3>Rental Rate: ${film.rentalRate}</h3>
-			<h3>Film Length: ${film.length}</h3>
-			<h3>Replacement cost: ${film.replacementCost}</h3>
-			<h3>Film rating: ${film.rating}</h3>
-			<h3>Special features: ${film.specialFeatures}</h3>
-			<h3>Actors: ${film.getActorsFullName()}</h3>
-			
-		</c:when>
-		<c:otherwise>
-		</c:otherwise>
-	</c:choose>
+	    <c:choose>
+        <c:when test="${not empty film }">
+        
+            <h2>${film.title}</h2>
+            <h3>Film description: ${film.description}</h3>
+            <h3>Release year: ${film.releaseYear}</h3>
+            <h3>Language: ${film.getLanguage()}</h3>
+            <h3>Rental Duration: ${film.rentalDuration}</h3>
+            <h3>Rental Rate: ${film.rentalRate}</h3>
+            <h3>Film Length: ${film.length}</h3>
+            <h3>Replacement cost: ${film.replacementCost}</h3>
+            <h3>Film rating: ${film.rating}</h3>
+            <h3>Special features: ${film.specialFeatures}</h3>
+            <h3>Actors: ${film.getActorsFullName()}</h3>
+        
+            
+                 <form action="deleteFilm.do" method="POST">
+            <input type="hidden" name="filmId" value="${film.filmId}">
+            <button>Delete Film</button>
+        </form> 
+
+        <a href="editFilm.jsp" >
+<%--             <input type="hidden" name="filmId" value="${film.filmId}">
+ --%>            <button>Edit Film</button>
+        </a>
+        </c:when>
+        <c:otherwise>
+        </c:otherwise>
+    </c:choose>
 </body>
 </html>

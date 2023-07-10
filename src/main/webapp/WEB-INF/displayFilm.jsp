@@ -26,10 +26,10 @@
 
 		<a href="home.do">Back to Home</a>
 
-		<%-- <form action="deleteFilm.do" method="POST">
+		<form action="deleteFilm.do" method="POST">
             <input type="hidden" name="filmId" value="${film.filmId}">
             <button>Delete Film</button>
-        </form> --%>
+        </form> 
 
 		<form action="editFilm.do" method="GET">
 			<input type="hidden" name="filmId" value="${film.filmId}">
