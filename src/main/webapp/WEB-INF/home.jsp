@@ -39,26 +39,6 @@
 	
 	<button type="submit">Create a Film</button>
 	</form>
-<<<<<<< HEAD
-
-	    <c:choose>
-        <c:when test="${not empty film }">
-        
-            <h2>${film.title}</h2>
-            <h3>Film description: ${film.description}</h3>
-            <h3>Release year: ${film.releaseYear}</h3>
-            <h3>Language: ${film.getLanguage()}</h3>
-            <h3>Rental Duration: ${film.rentalDuration}</h3>
-            <h3>Rental Rate: ${film.rentalRate}</h3>
-            <h3>Film Length: ${film.length}</h3>
-            <h3>Replacement cost: ${film.replacementCost}</h3>
-            <h3>Film rating: ${film.rating}</h3>
-            <h3>Special features: ${film.specialFeatures}</h3>
-            <h3>Actors: ${film.getActorsFullName()}</h3>
-        
-            
-                 <form action="deleteFilm.do" method="POST">
-=======
 </div>
 	<c:choose>
 		<c:when test="${not empty film }">
@@ -77,21 +57,10 @@
 		
 			
 			     <form action="deleteFilm.do" method="POST">
->>>>>>> 00e9a28c5fc7d25edde219d00997501cc697c2d8
             <input type="hidden" name="filmId" value="${film.filmId}">
             <button>Delete Film</button>
         </form> 
 
-<<<<<<< HEAD
-        <a href="editFilm.jsp" >
-<%--             <input type="hidden" name="filmId" value="${film.filmId}">
- --%>            <button>Edit Film</button>
-        </a>
-        </c:when>
-        <c:otherwise>
-        </c:otherwise>
-    </c:choose>
-=======
     <form action="editFilm.do" method="POST">
         <input type="hidden" name="filmId" value="${film.filmId}">
         
@@ -117,7 +86,7 @@
 		<input type="text" name="replacementCost" value="${film.replacementCost}" placeholder="Edit Replacement Cost"><br>
 		<label for="rating">Rating:</label>
 		<input type="text" name="rating" value="${film.rating}" placeholder="Edit Rating"><br>
-<label for="specialFeatures">Special Features:</label>
+        <label for="specialFeatures">Special Features:</label>
 		<input type="text" name="specialFeatures" value="${film.specialFeatures}" placeholder="Edit special features"><br>
 
         
@@ -127,6 +96,5 @@
 		<c:otherwise>
 		</c:otherwise>
 	</c:choose>
->>>>>>> 00e9a28c5fc7d25edde219d00997501cc697c2d8
 </body>
 </html>

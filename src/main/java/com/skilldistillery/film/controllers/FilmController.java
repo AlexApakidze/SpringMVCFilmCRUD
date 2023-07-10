@@ -5,7 +5,6 @@ import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
@@ -72,35 +71,9 @@ public class FilmController {
 		mv.addObject("film", film);
 		return mv;
 	}
-	@RequestMapping(value = "/editFilm.do", method = {RequestMethod.GET, RequestMethod.POST})
+
+	@RequestMapping(path = "editFilm.do")
 	public ModelAndView editFilm(@RequestParam(name = "filmId") int filmId, 
-<<<<<<< HEAD
-	        @RequestParam(name = "title") String title,
-	        @RequestParam(name = "description") String description,
-	        @RequestParam(name = "releaseYear") short releaseYear,
-	        @RequestParam(name = "languageId") int languageId,
-	        @RequestParam(name = "rentalDuration") int rentalDuration,
-	        @RequestParam(name = "rentalRate") double rentalRate, 
-	        @RequestParam(name = "length") int length,
-	        @RequestParam(name = "replacementCost") double replacementCost, 
-	        @RequestParam(name = "rating") String rating,
-	        @RequestParam(name = "specialFeatures") String specialFeatures) throws SQLException {
-	    ModelAndView mv = new ModelAndView("film.jsp");
-	    Film editedFilm = filmDao.findFilmById(filmId);
-	    editedFilm.setTitle(title);
-	    editedFilm.setDescription(description);
-	    editedFilm.setReleaseYear(releaseYear);
-	    editedFilm.setLanguageId(languageId);
-	    editedFilm.setRentalDuration(rentalDuration);
-	    editedFilm.setRentalRate(rentalRate);
-	    editedFilm.setLength(length);
-	    editedFilm.setReplacementCost(replacementCost);
-	    editedFilm.setRating(rating);
-	    editedFilm.setSpecialFeatures(specialFeatures);        
-	    mv.addObject("film", editedFilm);
-	    
-	    return mv;
-=======
 			@RequestParam(name = "title") String title,
 			@RequestParam(name = "description") String description,
 			@RequestParam(name = "releaseYear") short releaseYear,
@@ -140,13 +113,7 @@ public class FilmController {
 		}
 		
 		return mv;
->>>>>>> 00e9a28c5fc7d25edde219d00997501cc697c2d8
 	}
-
-
-
-
-    
 
 
 }
