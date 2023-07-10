@@ -143,6 +143,9 @@ public class Film {
 
 	public String getActorsFullName() {
 		String actorsInMovie ="";
+		if(this.actors.isEmpty()) {
+			return "";
+		}
 		for (Actor actor : actors) {
 			actorsInMovie = actorsInMovie+ actor.getFirstName()+" "+actor.getLastName()+", ";
 		}
